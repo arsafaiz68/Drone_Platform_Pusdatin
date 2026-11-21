@@ -1,0 +1,106 @@
+{
+  "file": "Clipped_18.11_07.30_TerminalPulogebang_Padat.mp4",
+  "metadata": {
+    "tanggal": "18.11.2026",
+    "waktu": "07:30",
+    "nama_lokasi": "Terminal Pulogebang",
+    "jenis_lokasi": "Terminal",
+    "kondisi_lalin": "Padat",
+    "template": "Terminal",
+    "durasi_final": 30.0,
+    "jumlah_video_sumber": 2,
+    "jumlah_segmen": 8
+  },
+  "export_mode": "re-encode",
+  "mode_reason": "parameter video sumber berbeda (resolusi/fps/codec/audio)",
+  "encoder": "libx264",
+  "params": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30.0
+  },
+  "segments": [
+    {
+      "order": 1,
+      "video": "short720.mp4",
+      "start": 1.44,
+      "end": 3.84,
+      "point": "1",
+      "direction": "outbound",
+      "role": "point",
+      "edited_by_operator": false
+    },
+    {
+      "order": 2,
+      "video": "short720.mp4",
+      "start": 4.338,
+      "end": 6.838,
+      "point": "2",
+      "direction": "outbound",
+      "role": "point",
+      "edited_by_operator": false
+    },
+    {
+      "order": 3,
+      "video": "roundtrip.mp4",
+      "start": 9.5,
+      "end": 14.0,
+      "point": "2",
+      "direction": "outbound",
+      "role": "support",
+      "edited_by_operator": false
+    },
+    {
+      "order": 4,
+      "video": "short720.mp4",
+      "start": 7.2,
+      "end": 9.6,
+      "point": "3",
+      "direction": "outbound",
+      "role": "point",
+      "edited_by_operator": false
+    },
+    {
+      "order": 5,
+      "video": "roundtrip.mp4",
+      "start": 15.5,
+      "end": 20.0,
+      "point": "3",
+      "direction": "outbound",
+      "role": "support",
+      "edited_by_operator": false
+    },
+    {
+      "order": 6,
+      "video": "roundtrip.mp4",
+      "start": 20.5,
+      "end": 25.0,
+      "point": "3",
+      "direction": "return",
+      "role": "point",
+      "edited_by_operator": false
+    },
+    {
+      "order": 7,
+      "video": "roundtrip.mp4",
+      "start": 27.5,
+      "end": 32.0,
+      "point": "2",
+      "direction": "return",
+      "role": "point",
+      "edited_by_operator": false
+    },
+    {
+      "order": 8,
+      "video": "roundtrip.mp4",
+      "start": 32.507,
+      "end": 37.207,
+      "point": "1",
+      "direction": "return",
+      "role": "point",
+      "edited_by_operator": false
+    }
+  ],
+  "duration_target": 30,
+  "duration_actual": 30.021
+}

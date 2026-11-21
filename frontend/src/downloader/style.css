@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* Drone Video Downloader — tema iOS 27 (Liquid Glass). Palet "navy" dipetakan ke warna sistem iOS
+   (systemBlue untuk aksen, label hampir hitam untuk judul) agar seluruh komponen ikut menyesuaikan. */
+@theme {
+  --color-navy-50: #eaf3ff;
+  --color-navy-100: #d6e8ff;
+  --color-navy-200: #a8cfff;
+  --color-navy-500: #0a84ff;
+  --color-navy-600: #007aff;
+  --color-navy-700: #007aff;
+  --color-navy-800: #0066d6;
+  --color-navy-900: #1c1c1e;
+  --color-navy-950: #000000;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.375rem;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+  body {
+    @apply text-slate-800 antialiased;
+    letter-spacing: -0.01em;
+    background:
+      radial-gradient(900px 600px at 0% 0%, rgba(120, 170, 255, 0.35), transparent 60%),
+      radial-gradient(800px 600px at 100% 10%, rgba(120, 220, 230, 0.3), transparent 60%),
+      radial-gradient(900px 700px at 60% 100%, rgba(200, 170, 255, 0.25), transparent 60%),
+      #eef2f8;
+    background-attachment: fixed;
+  }
+  input[type="checkbox"] {
+    accent-color: #007aff;
+  }
+}
+
+/* Material kaca (Liquid Glass) — dapat dipakai sebagai kelas "glass" maupun @apply */
+@utility glass {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 8px 28px rgba(31, 45, 90, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Tombol kapsul gaya iOS */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 150ms, color 150ms, transform 100ms;
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+}
+
+@layer components {
+  .card {
+    @apply glass rounded-[22px];
+  }
+  .card-header {
+    @apply flex items-center justify-between gap-3 px-5 py-4;
+    border-bottom: 1px solid rgba(60, 60, 67, 0.12);
+  }
+  .card-title {
+    @apply flex items-center gap-2 text-base font-semibold text-navy-900;
+    letter-spacing: -0.015em;
+  }
+  .btn-primary {
+    @apply btn bg-[#007aff] text-white hover:bg-[#0066d6];
+    box-shadow: 0 4px 14px rgba(0, 122, 255, 0.28);
+  }
+  .btn-secondary {
+    @apply btn bg-[rgba(118,118,128,0.12)] text-[#007aff] hover:bg-[rgba(118,118,128,0.2)];
+  }
+  .btn-danger {
+    @apply btn bg-[rgba(255,59,48,0.12)] text-[#d70015] hover:bg-[rgba(255,59,48,0.2)];
+  }
+  .btn-ghost {
+    @apply btn px-3 py-1.5 text-[#007aff] hover:bg-[rgba(118,118,128,0.12)];
+  }
+  .input {
+    @apply w-full rounded-xl border border-transparent bg-[rgba(118,118,128,0.10)] px-3 py-2 text-sm outline-none focus:border-[rgba(0,122,255,0.5)] focus:bg-white focus:ring-4 focus:ring-[rgba(0,122,255,0.15)];
+  }
+  .cell-input {
+    @apply w-full rounded-lg border border-transparent bg-transparent px-2 py-1 text-sm outline-none hover:bg-[rgba(118,118,128,0.08)] focus:border-[rgba(0,122,255,0.5)] focus:bg-white;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
+
+/* ================================================================
+   Mode gelap (iOS 27 dark) — aktif lewat html[data-theme="dark"].
+   Utilitas Tailwind v4 membaca var(--color-*), jadi cukup memetakan ulang palet.
+   ================================================================ */
+html[data-theme="dark"] {
+  --color-slate-50: #1c1c1e;
+  --color-slate-100: #2c2c2e;
+  --color-slate-200: #3a3a3c;
+  --color-slate-300: #8e8e93;
+  --color-slate-400: #98989d;
+  --color-slate-500: #aeaeb2;
+  --color-slate-600: #c7c7cc;
+  --color-slate-700: #d1d1d6;
+  --color-slate-800: #e5e5ea;
+  --color-slate-900: #f2f2f7;
+  --color-navy-50: rgba(10, 132, 255, 0.16);
+  --color-navy-100: rgba(10, 132, 255, 0.24);
+  --color-navy-200: rgba(10, 132, 255, 0.4);
+  --color-navy-500: #0a84ff;
+  --color-navy-600: #0a84ff;
+  --color-navy-700: #409cff;
+  --color-navy-800: #64b5ff;
+  --color-navy-900: #f2f2f7;
+  --color-red-50: rgba(255, 69, 58, 0.15);
+  --color-red-200: rgba(255, 69, 58, 0.38);
+  --color-red-300: #ff8a80;
+  --color-red-400: #ff6961;
+  --color-red-600: #ff6961;
+  --color-red-700: #ff8a80;
+  --color-amber-50: rgba(255, 159, 10, 0.15);
+  --color-amber-200: rgba(255, 159, 10, 0.38);
+  --color-amber-500: #ffb340;
+  --color-amber-700: #ffcc66;
+  --color-amber-800: #ffd98a;
+  --color-emerald-50: rgba(48, 209, 88, 0.15);
+  --color-emerald-200: rgba(48, 209, 88, 0.38);
+  --color-emerald-500: #30d158;
+  --color-emerald-600: #4ade80;
+  --color-emerald-700: #6ee7a0;
+  --color-sky-50: rgba(100, 210, 255, 0.15);
+  --color-sky-700: #7dd3fc;
+  --color-blue-50: rgba(10, 132, 255, 0.16);
+  --color-blue-700: #9ecbff;
+  --color-indigo-50: rgba(94, 92, 230, 0.2);
+  --color-indigo-700: #a5b4fc;
+  color-scheme: dark;
+}
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(900px 600px at 0% 0%, rgba(10, 80, 200, 0.35), transparent 60%),
+    radial-gradient(800px 600px at 100% 10%, rgba(0, 120, 140, 0.28), transparent 60%),
+    radial-gradient(900px 700px at 60% 100%, rgba(90, 50, 160, 0.28), transparent 60%),
+    #050608;
+  background-attachment: fixed;
+}
+html[data-theme="dark"] .glass,
+html[data-theme="dark"] .card {
+  background: rgba(30, 30, 32, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+html[data-theme="dark"] .card-header { border-bottom-color: rgba(84, 84, 88, 0.55); }
+html[data-theme="dark"] .bg-white { background-color: #545456; }
+html[data-theme="dark"] pre.bg-white { background-color: #1c1c1e; }
+html[data-theme="dark"] .hover\:bg-white\/70:hover { background-color: rgba(118, 118, 128, 0.24); }
+html[data-theme="dark"] .bg-black\/25 { background-color: rgba(0, 0, 0, 0.55); }
+html[data-theme="dark"] .bg-emerald-700 { background-color: #248a3d; }
+html[data-theme="dark"] .hover\:bg-emerald-800:hover { background-color: #1d6b31; }
+html[data-theme="dark"] .btn-primary { background-color: #0a84ff; box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35); }
+html[data-theme="dark"] .btn-primary.bg-emerald-700 { background-color: #248a3d; }
+html[data-theme="dark"] .btn-secondary,
+html[data-theme="dark"] .btn-ghost { color: #409cff; }
+html[data-theme="dark"] .btn-secondary { background-color: rgba(118, 118, 128, 0.24); }
+html[data-theme="dark"] .btn-danger { background-color: rgba(255, 69, 58, 0.18); color: #ff6961; }
+html[data-theme="dark"] .input { background-color: rgba(118, 118, 128, 0.24); color: #f2f2f7; }
+html[data-theme="dark"] .input:focus,
+html[data-theme="dark"] .cell-input:focus { background-color: #2c2c2e; }
+html[data-theme="dark"] .cell-input { color: #f2f2f7; }
+html[data-theme="dark"] select option { background: #1c1c1e; color: #f2f2f7; }
+html[data-theme="dark"] input[type="checkbox"] { accent-color: #0a84ff; }

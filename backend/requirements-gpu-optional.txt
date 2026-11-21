@@ -1,0 +1,3 @@
+# OPSIONAL - akselerasi model ONNX di GPU NVIDIA (butuh driver + CUDA/cuDNN yang sesuai).
+# Detektor bawaan memakai OpenCV DNN; paket ini hanya dipakai untuk deteksi status CUDA.
+onnxruntime-gpu>=1.17
