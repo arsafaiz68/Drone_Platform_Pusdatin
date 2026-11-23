@@ -1,4 +1,4 @@
-"""Template (6) dan standar penamaan file — uji #26, #27, #28, #29, #30."""
+"""Template (7) dan standar penamaan file — uji #26, #27, #28, #29, #30."""
 from datetime import datetime
 
 import pytest
@@ -7,7 +7,7 @@ from app.core.templates_config import all_templates, get_template, resolve_route
 from app.services import naming_service as N
 
 
-def test_six_templates_and_routes():
+def test_seven_templates_and_routes():
     ts = {t["code"]: t for t in all_templates()}
     assert list(ts) == ["pelabuhan", "terminal", "stasiun", "gerbang_tol", "jalan_tol", "jalan_arteri", "rest_area"]
     assert ts["terminal"]["route_outbound"] == ["H", "1", "2", "3"]

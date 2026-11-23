@@ -2,3 +2,4 @@
 pytest>=8.0
 requests>=2.31
 httpx>=0.27
+Pillow>=10.0  # dipakai tests/test_compiler.py::_text_png untuk gambar teks render

@@ -76,10 +76,10 @@ def test_batch_lifecycle_with_websocket(client):
     r = client.post("/api/downloader/batches", json={"entries": entries, "output_dir": str(out), "quality": 720, "parallel": 2})
     assert r.status_code == 201, r.text
     batch_id = r.json()["id"]
-    with client.websocket_connect(f"/api/downloader/downloader/batches/{batch_id}/ws") as ws:
+    with client.websocket_connect(f"/api/downloader/batches/{batch_id}/ws") as ws:
         assert ws.receive_json()["type"] == "snapshot"
     for _ in range(100):
-        b = client.get(f"/api/downloader/downloader/batches/{batch_id}").json()
+        b = client.get(f"/api/downloader/batches/{batch_id}").json()
         if b["summary"]["finished"]:
             break
         time.sleep(0.05)

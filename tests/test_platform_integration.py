@@ -363,6 +363,12 @@ def test_delete_project(project, tmp_path, assets, worker):
     with pytest.raises(ValidationError):
         A.delete_project(project["id"])
     db.update("batch_jobs", b2["id"], {"status": "draft"})
+    # Worker sudah terlanjur menjadwalkan analisis video b2 saat statusnya "running";
+    # tunggu analisis yang sedang berjalan itu selesai sebelum menghapus proyek,
+    # karena delete_batch memang menolak batch yang itemnya masih "analyzing".
+    # (Bila worker belum sempat menjadwalkan, item masih "waiting" dan tidak perlu ditunggu.)
+    if B.list_items(b2["id"])[0]["status"] in ("analyzing", "processing", "analyzed"):
+        wait_batch(b2["id"])
     r = A.delete_project(project["id"])
     assert r["deleted"] and r["batches"] == 2 and r["final_videos"] >= 1
     assert db.get("projects", project["id"]) is None

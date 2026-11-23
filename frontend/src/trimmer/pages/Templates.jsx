@@ -9,7 +9,7 @@ export default function Templates() {
     <div className="page">
       <header className="page-head">
         <div><h1>Template Pemantauan</h1>
-          <p className="muted">Enam template terpusat (backend/app/core/templates_config.py). Bobot kepentingan menentukan alokasi durasi pada video final.</p></div>
+          <p className="muted">Tujuh template terpusat (backend/app/core/templates_config.py). Bobot kepentingan menentukan alokasi durasi pada video final.</p></div>
       </header>
       <ErrorBox error={error} onRetry={reload} />
       {loading && !data ? <Loading /> : (

@@ -3,7 +3,7 @@
 Dokumen ini menjelaskan secara jujur apa yang sudah dan belum dapat dilakukan AI pada versi 1.0.
 
 ## Sudah berfungsi penuh
-* Enam template, batch ≤ 24 video, antrean (Menunggu → Sedang dianalisis → Analisis selesai → Sedang diproses →
+* Tujuh template, batch ≤ 24 video, antrean (Menunggu → Sedang dianalisis → Analisis selesai → Sedang diproses →
   Menunggu review → Selesai / Gagal / Dibatalkan), concurrency 1/2/4 dengan batas perangkat, jeda/lanjut/batal,
   isolasi kegagalan per video, pemulihan setelah aplikasi ditutup.
 * Analisis visual lokal (kualitas, buram, kestabilan, gerak kamera, perubahan adegan, putar balik).
