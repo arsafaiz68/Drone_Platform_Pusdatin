@@ -1,4 +1,4 @@
-# Panduan Enam Template Pemantauan
+# Panduan Tujuh Template Pemantauan
 
 Template disimpan terpusat di `backend/app/core/templates_config.py` dan disinkronkan ke tabel `templates`
 dan `template_points` setiap aplikasi dijalankan. Setiap titik memiliki:

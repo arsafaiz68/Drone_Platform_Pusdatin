@@ -56,7 +56,7 @@ def ok(r):
 def test_full_flow(server, assets):
     s = server
     assert ok(requests.get(s + "/health"))["status"] == "ok"
-    assert len(ok(requests.get(s + "/templates"))) == 6
+    assert len(ok(requests.get(s + "/templates"))) == 7
     hw = ok(requests.get(s + "/hardware"))
     assert hw["mode"] in ("cpu", "cuda")
     assert "values" in ok(requests.get(s + "/settings"))
